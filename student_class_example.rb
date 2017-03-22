@@ -17,7 +17,7 @@ class StudentClassExample
 		puts "Student Marks = #{@stud_marks}"
 
 	end
-	def self.student_count()
+	def StudentClassExample.student_count()
 		puts "Total number of students = #{@@number_of_students}"
 	end	
 end

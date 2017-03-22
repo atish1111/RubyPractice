@@ -39,11 +39,52 @@
 	puts "1.eql?(1.0) = #{1.eql?(1.0)} "
 	puts "1.eql?(2) = #{1.eql?(1)} "
 
-#Range operator '..' 
-	#Creates a range from start point to end point inclusive
-
+#Range operator '..' and '...'
+	#'..' Creates a range from start point to end point inclusive
 	a = 1..10
 	puts "1..10 ="
 	a.each do |i|
 		puts "#{i}"
 	end
+
+	#'..' Creates a range from start point to end point inclusive
+	a = 1...10
+	puts "1...10 ="
+	a.each do |i|
+		puts "#{i}"
+	end
+
+#'defined?' operator
+	foo = 42
+	$bar = 10
+
+	def method1()
+
+	end
+
+	puts "defined? foo = #{defined? foo}"
+	puts "defined? $bar = #{defined? $bar}"
+	puts "defined? not_defined_var = #{defined? not_defined_var}"
+	puts "defined?method() = #{defined?method1()}"
+
+#dot (.) and colon (::) operator
+CONST = ' out there'
+class Inside_one
+   CONST = proc {' in there'}
+   def where_is_my_CONST
+      ::CONST + ' inside one'
+   end
+end
+class Inside_two
+   CONST = ' inside two'
+   def where_is_my_CONST
+      CONST
+   end
+end
+puts Inside_one.new.where_is_my_CONST
+puts Inside_two.new.where_is_my_CONST
+puts Object::CONST + Inside_two::CONST
+puts Inside_two::CONST + CONST
+puts Inside_one::CONST
+puts Inside_one::CONST.call + Inside_two::CONST
+puts Inside_one::CONST
