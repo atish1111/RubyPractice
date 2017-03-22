@@ -1,4 +1,5 @@
 #!/usr/bin/ruby -w
+
 class StudentClassExample
 	@@number_of_students = 0
 	def initialize(id, name, city, marks)

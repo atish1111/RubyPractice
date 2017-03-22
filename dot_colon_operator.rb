@@ -1,4 +1,5 @@
 #! usr/bin/ruby -w
+
 #dot (.) and colon (::) operator
 CONST = ' out there'
 class Inside_one
